@@ -1,22 +1,352 @@
-index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StegaMark - Watermark Tool</title>
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-  <script src="https://unpkg.com/react-dropzone/dist/index.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermark Tool</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-\[\#000035\] {
+            background-color: #000035;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .max-w-4xl {
+            max-width: 64rem; /* 4xl in tailwind usually is 64rem */
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem; /* 36px */
+            line-height: 2.5rem; /* 40px */
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .border-4 {
+            border-width: 4px;
+        }
+
+        .border-dashed {
+            border-style: dashed;
+        }
+
+        .border-white {
+            border-color: white;
+        }
+
+        .p-10 {
+            padding: 2.5rem;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem; /* 12px */
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .hover\:bg-white\/10:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .transition {
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75rem; /* 28px */
+        }
+
+        .max-h-\[400px\] {
+            max-height: 400px;
+        }
+
+        .object-contain {
+            object-fit: contain;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem; /* 8px */
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .top-4 {
+            top: 1rem;
+        }
+
+        .left-4 {
+            left: 1rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem; /* 20px */
+            line-height: 1.75rem; /* 28px */
+        }
+
+        .bg-black\/50 {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+            margin-top: 1rem;
+        }
+
+        .space-y-4 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .rounded {
+            border-radius: 0.25rem; /* 4px */
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .text-black {
+            color: black;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .bg-blue-500 {
+            background-color: #3b82f6;
+        }
+
+        .hover\:bg-blue-600:hover {
+            background-color: #2563eb;
+        }
+
+        .bg-green-500 {
+            background-color: #16a34a;
+        }
+
+        .hover\:bg-green-600:hover {
+            background-color: #15803d;
+        }
+
+        .bg-yellow-500 {
+            background-color: #f59e0b;
+        }
+
+        .hover\:bg-yellow-600:hover {
+            background-color: #d97706;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .text-green-300 {
+            color: #86efac;
+        }
+
+    </style>
 </head>
-<body>
-  <div id="root"></div>
-  
-  <script type="text/babel" src="WatermarkTool.jsx"></script>
-  <script type="text/babel">
-    ReactDOM.render(<WatermarkTool />, document.getElementById('root'));
-  </script>
+<body class="min-h-screen bg-[#000035] text-white p-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-6">Watermark Tool</h1>
+
+        <div id="dropzone" class="border-4 border-dashed border-white p-10 rounded-xl cursor-pointer hover:bg-white/10 transition mb-6">
+            <input type="file" id="imageUpload" style="display: none;" accept="image/*">
+            <p class="text-lg">Drop your image here or click to upload</p>
+        </div>
+
+        <div id="imageContainer" class="mb-6" style="position: relative; display: none;">
+            <img id="uploadedImage" src="" alt="Uploaded" class="mx-auto max-h-[400px] object-contain rounded-lg">
+            <div id="visibleWatermark" class="absolute top-4 left-4 text-xl font-bold text-white bg-black/50 px-2 py-1 rounded" style="display: none;"></div>
+        </div>
+
+        <div id="controls" class="space-y-4" style="display: none;">
+            <div>
+                <input type="text" id="visibleWatermarkText" placeholder="Enter visible watermark text" class="px-4 py-2 rounded bg-white text-black w-full">
+                <button id="applyVisibleWatermarkBtn" class="mt-2 px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded text-white">
+                    Apply Visible Watermark
+                </button>
+            </div>
+
+            <div>
+                <input type="text" id="invisibleWatermarkText" placeholder="Enter invisible watermark text" class="px-4 py-2 rounded bg-white text-black w-full">
+                <button id="applyInvisibleWatermarkBtn" class="mt-2 px-6 py-2 bg-green-500 hover:bg-green-600 rounded text-white">
+                    Add Invisible Watermark
+                </button>
+            </div>
+
+            <button id="extractInvisibleWatermarkBtn" class="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 rounded text-black">
+                Extract Invisible Watermark
+            </button>
+
+            <p id="extractedWatermarkText" class="mt-4 text-lg text-green-300" style="display: none;">
+                Extracted Watermark: <strong id="extractedTextValue"></strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const dropzone = document.getElementById('dropzone');
+        const imageUpload = document.getElementById('imageUpload');
+        const imageContainer = document.getElementById('imageContainer');
+        const uploadedImage = document.getElementById('uploadedImage');
+        const visibleWatermarkDiv = document.getElementById('visibleWatermark');
+        const visibleWatermarkText = document.getElementById('visibleWatermarkText');
+        const applyVisibleWatermarkBtn = document.getElementById('applyVisibleWatermarkBtn');
+        const invisibleWatermarkText = document.getElementById('invisibleWatermarkText');
+        const applyInvisibleWatermarkBtn = document.getElementById('applyInvisibleWatermarkBtn');
+        const extractInvisibleWatermarkBtn = document.getElementById('extractInvisibleWatermarkBtn');
+        const extractedWatermarkText = document.getElementById('extractedWatermarkText');
+        const extractedTextValue = document.getElementById('extractedTextValue');
+        const controls = document.getElementById('controls');
+
+        let imageBase64 = null;
+        let visibleText = "";
+        let invisibleText = "";
+        let extractedText = null;
+        let mode = "none";
+
+        dropzone.addEventListener('click', () => {
+            imageUpload.click();
+        });
+
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('hover:bg-white/10');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('hover:bg-white/10');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('hover:bg-white/10');
+            const files = e.dataTransfer.files;
+            handleFiles(files);
+        });
+
+        imageUpload.addEventListener('change', (event) => {
+            const files = event.target.files;
+            handleFiles(files);
+        });
+
+        function handleFiles(files) {
+            const file = files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imageBase64 = e.target.result;
+                    uploadedImage.src = imageBase64;
+                    imageContainer.style.display = 'block';
+                    controls.style.display = 'flex';
+                    extractedWatermarkText.style.display = 'none';
+                    extractedTextValue.textContent = '';
+                    mode = "none";
+                    visibleWatermarkDiv.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please upload an image file.');
+            }
+        }
+
+        applyVisibleWatermarkBtn.addEventListener('click', () => {
+            visibleText = visibleWatermarkText.value;
+            if (visibleText) {
+                visibleWatermarkDiv.textContent = visibleText;
+                visibleWatermarkDiv.style.display = 'block';
+                mode = "visible";
+            } else {
+                visibleWatermarkDiv.style.display = 'none';
+                mode = "none";
+            }
+        });
+
+        applyInvisibleWatermarkBtn.addEventListener('click', () => {
+            invisibleText = invisibleWatermarkText.value;
+            localStorage.setItem("invisible-watermark", invisibleText);
+            alert("Invisible watermark added (simulated by localStorage).");
+        });
+
+        extractInvisibleWatermarkBtn.addEventListener('click', () => {
+            const hidden = localStorage.getItem("invisible-watermark");
+            extractedText = hidden;
+            extractedTextValue.textContent = extractedText || 'No watermark found';
+            extractedWatermarkText.style.display = 'block';
+            mode = "extracted";
+        });
+    </script>
 </body>
 </html>
