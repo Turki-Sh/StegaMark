@@ -12,48 +12,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunIcon = document.getElementById('theme-icon-sun');
     const moonIcon = document.getElementById('theme-icon-moon');
 
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const setThemeIcons = (isDark) => {
+        sunIcon?.classList.toggle('hidden', isDark);
+        moonIcon?.classList.toggle('hidden', !isDark);
+    };
 
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        body.classList.add('dark');
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-    } else {
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-    }
+    body.classList.toggle('dark', savedTheme !== 'light');
+    setThemeIcons(body.classList.contains('dark'));
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark');
         const isDark = body.classList.contains('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        sunIcon.classList.toggle('hidden', isDark);
-        moonIcon.classList.toggle('hidden', !isDark);
+        setThemeIcons(isDark);
     });
-
-     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const isOsDark = event.matches;
-        if (!localStorage.getItem('theme')) {
-             body.classList.toggle('dark', isOsDark);
-             sunIcon.classList.toggle('hidden', isOsDark);
-             moonIcon.classList.toggle('hidden', !isOsDark);
-        }
-     });
 
     // ---------- Tab Switching ----------
     const tabs = document.querySelectorAll('.tab');
     const sections = document.querySelectorAll('.section');
 
+    const activateTab = (tab) => {
+        if (!tab) return;
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const sectionId = tab.id.replace('tab-', 'section-');
+        sections.forEach(s => s.classList.add('hidden'));
+        document.getElementById(sectionId)?.classList.remove('hidden');
+    };
+
     tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            const sectionId = tab.id.replace('tab-', 'section-');
-            sections.forEach(s => s.classList.add('hidden'));
-            document.getElementById(sectionId)?.classList.remove('hidden');
-        });
+        tab.addEventListener('click', () => activateTab(tab));
      });
+
+    document.querySelectorAll('[data-open-tab]').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            activateTab(document.getElementById(link.dataset.openTab));
+            document.getElementById('studio')?.scrollIntoView({ block: 'start' });
+        });
+    });
 
     // ---------- DOM Elements Caching ----------
     // Common Elements

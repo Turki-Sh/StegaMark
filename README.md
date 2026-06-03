@@ -12,7 +12,7 @@ StegaMark Pro is a modern web application that demonstrates advanced image proce
 
 ## 🚀 Try It Live
 
-- **Frontend:** [StegaMark Pro on GitHub Pages](https://goldenahmad.github.io/StegaMark_V2.1/)
+- **Frontend:** [StegaMark Pro on GitHub Pages](https://turki-sh.github.io/StegaMark/)
 - **Backend:** Hosted on PythonAnywhere ([API root](https://0QuQ.pythonanywhere.com))
 
 ---
@@ -61,8 +61,8 @@ StegaMark Pro is an image processing system with two main components:
 
 **1. Clone the Repository:**
 ```bash
-git clone https://github.com/GoldenAhmad/StegaMark_V2.1.git
-cd StegaMark_V2.1
+git clone https://github.com/Turki-Sh/StegaMark.git
+cd StegaMark
 ```
 
 **2. Backend (Python Flask Server):**
@@ -115,4 +115,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-> **Developed by [GoldenAhmad](https://github.com/GoldenAhmad) — 2025**
+> **Developed by [Turki-Sh](https://github.com/Turki-Sh) — 2026**

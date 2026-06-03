@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StegaMark Pro - Image Watermarking</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>StegaMark - Digital Watermarking Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link to your Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="min-h-screen font-sans">
-    <header class="header-gradient text-white py-5 px-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-3xl font-bold flex items-center">
-                    <img src="StegaMarkLogo.webp" alt="StegaMark Logo" class="h-10 mr-3"> StegaMark Pro
-                </h1>
-                <span class="ml-3 text-xs bg-gray-100 dark:bg-gray-700 text-blue-500 px-2 py-0.5 rounded-full font-semibold shadow">v2.1</span>
-            </div>
-            <div class="flex items-center mt-4 md:mt-0">
-                 <span class="text-sm mr-3 hidden sm:inline">Toggle Theme</span>
-                <button id="theme-toggle" class="theme-toggle-btn">
+<body class="min-h-screen font-sans dark">
+    <header class="site-header">
+        <div class="site-nav">
+            <a href="#top" class="brand-lockup" aria-label="StegaMark home">
+                <img src="StegaMarkLogo.webp" alt="StegaMark Logo" class="brand-logo">
+                <span>
+                    <strong>StegaMark</strong>
+                    <small>Watermarking AI</small>
+                </span>
+            </a>
+            <nav class="nav-links" aria-label="Page sections">
+                <a href="#problem">Problem</a>
+                <a href="#studio" data-open-tab="tab-watermark">Studio</a>
+                <a href="#studio" data-open-tab="tab-extract">Extract</a>
+                <a href="#studio" data-open-tab="tab-code">Code</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="connect-btn" href="#studio">Launch</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle color theme" type="button">
                     <i id="theme-icon-sun" class="fas fa-sun text-xl"></i>
                     <i id="theme-icon-moon" class="fas fa-moon text-xl hidden"></i>
                 </button>
@@ -30,17 +34,70 @@
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <!-- Tabs for Navigation -->
-        <div class="tabs flex justify-center mb-8 border-b border-gray-200 dark:border-gray-700">
+    <main id="top" class="site-main">
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-kicker">
+                <img src="StegaMarkLogo.webp" alt="" class="hero-mark" aria-hidden="true">
+                <span>StegaMark Pro</span>
+                <span class="version-pill">v2.1</span>
+            </div>
+            <h1 id="hero-title">StegaMark</h1>
+            <p class="hero-subtitle">Digital Watermarking and Steganography System</p>
+            <a href="#studio" class="hero-cta">Open Studio</a>
+            <div class="tech-marquee" aria-label="Technology stack">
+                <div class="marquee-track">
+                    <span>LSB Encoding</span>
+                    <span>Visible Marks</span>
+                    <span>Pillow</span>
+                    <span>Flask API</span>
+                    <span>Image Forensics</span>
+                    <span>Python</span>
+                    <span>Extraction</span>
+                    <span>LSB Encoding</span>
+                    <span>Visible Marks</span>
+                    <span>Pillow</span>
+                    <span>Flask API</span>
+                    <span>Image Forensics</span>
+                    <span>Python</span>
+                    <span>Extraction</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem" class="problem-section" aria-labelledby="problem-title">
+            <div>
+                <p class="section-kicker">01 The problem we're solving</p>
+                <h2 id="problem-title">Images travel fast. Trust does not.</h2>
+            </div>
+            <p class="problem-copy">StegaMark gives image owners a focused workspace for visible brand marks, hidden payloads, and later verification without turning the workflow into a forensic maze.</p>
+            <div class="insight-grid">
+                <article class="insight-card insight-card-large">
+                    <h3>Ownership needs proof</h3>
+                    <p>Reusable controls keep releases consistent.</p>
+                    <strong>3</strong>
+                    <span>watermark modes in the studio</span>
+                </article>
+                <article class="insight-card">
+                    <h3>Hidden data needs precision</h3>
+                    <p>LSB controls balance payload capacity and image quality.</p>
+                </article>
+                <article class="insight-card">
+                    <h3>Verification needs speed</h3>
+                    <p>Extraction checks stay close to the authoring workflow.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="studio" class="studio-shell" aria-label="StegaMark studio">
+        <div class="tabs flex justify-center mb-8">
             <div id="tab-watermark" class="tab active">
                 <i class="fas fa-signature mr-2"></i> Add Watermark
             </div>
             <div id="tab-extract" class="tab">
-                 <i class="fas fa-search mr-2"></i> Extract Watermark
+                 <i class="fas fa-search mr-2"></i> Extract
             </div>
             <div id="tab-code" class="tab">
-                 <i class="fas fa-code mr-2"></i> Python Code Explained
+                 <i class="fas fa-code mr-2"></i> Code
             </div>
         </div>
 
@@ -64,7 +121,7 @@
                         <div class="grid grid-cols-3 gap-2">
                             <button data-wm-type="visible-text" class="btn-tab active"><i class="fas fa-font mr-1"></i> Text</button>
                             <button data-wm-type="visible-logo" class="btn-tab"><i class="far fa-image mr-1"></i> Logo</button>
-                            <button data-wm-type="invisible" class="btn-tab"><i class="fas fa-eye-slash mr-1"></i> Invisible</button>
+                            <button data-wm-type="invisible" class="btn-tab"><i class="fas fa-eye-slash mr-1"></i> LSB</button>
                         </div>
                     </div>
 
@@ -73,7 +130,7 @@
                         <!-- Text Specific -->
                         <div id="watermark-text-options">
                             <label for="watermarkText" class="input-label">Watermark Text</label>
-                            <input type="text" id="watermarkText" placeholder="Your text here" value="© StegaMark" class="input-field">
+                            <input type="text" id="watermarkText" placeholder="Your text here" value="&copy; StegaMark" class="input-field">
                         </div>
                         <!-- Logo Specific -->
                         <div id="watermark-logo-options" class="hidden">
@@ -453,31 +510,19 @@ print(f"Pixel Original: {pixel_value_3lsb} ({pixel_value_3lsb:08b}), Secret Bits
                      <strong>Example CLI Usage:</strong><br>
                      <code class="code-inline">python app.py encode-invisible --input input.png --message "Secret" --output encoded.png --strength 3</code><br>
                      <code class="code-inline">python app.py decode --input encoded.png --strength 3</code><br>
-                     <code class="code-inline">python app.py encode-visible --input input.jpg --text "© Me" --output visible.jpg --position bottom-right</code><br>
+                     <code class="code-inline">python app.py encode-visible --input input.jpg --text "&copy; Me" --output visible.jpg --position bottom-right</code><br>
                      <code class="code-inline">python app.py web</code>
                  </p>
             </div>
         </div>
 
-        <style>
-            /* Add simple style for inline code */
-            .code-inline {
-                background-color: rgba(100, 116, 139, 0.1); /* gray-500 transparent */
-                padding: 0.1em 0.3em;
-                border-radius: 0.25rem;
-                font-family: 'Courier New', Courier, monospace;
-                font-size: 0.9em;
-            }
-            body.dark .code-inline {
-                 background-color: rgba(156, 163, 175, 0.2); /* gray-400 transparent */
-            }
-        </style>
+        </section>
     </main>
 
-    <footer class="mt-12 py-6 px-4 border-t border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-dark-bg/50">
-        <div class="container mx-auto text-center text-sm">
-            <p class="text-gray-700 dark:text-gray-300">StegaMark Pro v2.1 - Advanced Watermarking & Steganography</p>
-            <p class="mt-1 text-gray-500 dark:text-gray-300">© 2025. All rights reserved.</p> <!-- Consider updating year -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>StegaMark Pro v2.1 - Advanced Watermarking & Steganography</p>
+            <p>&copy; 2026. All rights reserved.</p>
         </div>
     </footer>
 
