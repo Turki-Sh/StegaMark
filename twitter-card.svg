@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 628" width="1200" height="628">
+  <defs>
+    <!-- Amber glow from top-right (mirrors HARIS blue glow) -->
+    <radialGradient id="glowTR" cx="100%" cy="0%" r="70%" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#F59E0B" stop-opacity="0.28"/>
+      <stop offset="45%"  stop-color="#F59E0B" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Subtle inner card shadow on left -->
+    <linearGradient id="leftFade" x1="0%" y1="0%" x2="8%" y2="0%">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="1200" height="628" rx="16" fill="#0E0D0B"/>
+  <!-- Amber top-right glow -->
+  <rect width="1200" height="628" rx="16" fill="url(#glowTR)"/>
+  <!-- Subtle left depth -->
+  <rect width="1200" height="628" rx="16" fill="url(#leftFade)"/>
+
+  <!-- ═══ LOGO BOX + BRAND (top-left) ═══ -->
+  <!-- Box -->
+  <rect x="50" y="44" width="68" height="68" rx="14" fill="#181511" stroke="#F59E0B" stroke-width="2"/>
+  <!-- Eye icon -->
+  <path d="M60 78 C67 66 73 62 84 62 C95 62 101 66 108 78 C101 90 95 94 84 94 C73 94 67 90 60 78Z"
+        fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="84" cy="78" r="9.5" fill="#5EAAA8"/>
+  <circle cx="86" cy="76" r="3.8" fill="#0E0D0B"/>
+
+  <!-- Brand name -->
+  <text x="136" y="83"
+        font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="40" font-weight="700" fill="#F5F0E8" letter-spacing="-0.5">StegaMark</text>
+  <!-- Subtitle -->
+  <text x="137" y="112"
+        font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="14.5" fill="#5A5040" letter-spacing="0.15">Digital Watermarking Studio</text>
+
+  <!-- ═══ LARGE TITLE ═══ -->
+  <!-- Line 1 — WHITE (the "Hostile Activity" equivalent) -->
+  <text x="50" y="228"
+        font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="70" font-weight="800" fill="#F5F0E8" letter-spacing="-1.5">Watermark.</text>
+  <!-- Line 2 — dimmed -->
+  <text x="50" y="308"
+        font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="70" font-weight="800" fill="#3C362C" letter-spacing="-1.5">Embed Secrets.</text>
+  <!-- Line 3 — dimmed -->
+  <text x="50" y="388"
+        font-family="'Segoe UI','Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="70" font-weight="800" fill="#3C362C" letter-spacing="-1.5">Own Your Images.</text>
+
+  <!-- ═══ TAGLINE ═══ -->
+  <text x="50" y="432"
+        font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="16.5" fill="#6A6050" letter-spacing="0.1">Browser-based watermark, hide, reveal and auto-remove in one studio.</text>
+
+  <!-- ═══ FEATURE PILLS ═══ -->
+  <!-- Pill: Watermark -->
+  <rect x="50"  y="456" width="126" height="36" rx="18" fill="none" stroke="#3A3428" stroke-width="1.5"/>
+  <text x="113"  y="479" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#A89E90" text-anchor="middle" letter-spacing="0.3">Watermark</text>
+
+  <!-- Pill: LSB Encode -->
+  <rect x="188" y="456" width="126" height="36" rx="18" fill="none" stroke="#3A3428" stroke-width="1.5"/>
+  <text x="251" y="479" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#A89E90" text-anchor="middle" letter-spacing="0.3">LSB Encode</text>
+
+  <!-- Pill: Reveal -->
+  <rect x="326" y="456" width="100" height="36" rx="18" fill="none" stroke="#3A3428" stroke-width="1.5"/>
+  <text x="376" y="479" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#A89E90" text-anchor="middle" letter-spacing="0.3">Reveal</text>
+
+  <!-- Pill: Remove -->
+  <rect x="438" y="456" width="106" height="36" rx="18" fill="none" stroke="#3A3428" stroke-width="1.5"/>
+  <text x="491" y="479" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#A89E90" text-anchor="middle" letter-spacing="0.3">Remove</text>
+
+  <!-- ═══ RIGHT PIPELINE (vertical timeline) ═══ -->
+  <!-- Vertical amber line -->
+  <line x1="820" y1="175" x2="820" y2="570"
+        stroke="#F59E0B" stroke-width="2" stroke-opacity="0.55"/>
+
+  <!-- ── Item 1: Add Watermark ── -->
+  <circle cx="820" cy="210" r="9" fill="#F59E0B"/>
+  <rect x="838" y="188" width="270" height="46" rx="10" fill="#1C1A17"/>
+  <text x="973" y="216" font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="15" font-weight="600" fill="#F5F0E8" text-anchor="middle">Add Watermark</text>
+
+  <!-- ── Item 2: LSB Encode ── -->
+  <circle cx="820" cy="330" r="9" fill="#F59E0B"/>
+  <rect x="838" y="308" width="270" height="46" rx="10" fill="#1C1A17"/>
+  <text x="973" y="336" font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="15" font-weight="600" fill="#F5F0E8" text-anchor="middle">LSB Encode</text>
+
+  <!-- ── Item 3: Reveal Hidden ── -->
+  <circle cx="820" cy="450" r="9" fill="#F59E0B"/>
+  <rect x="838" y="428" width="270" height="46" rx="10" fill="#1C1A17"/>
+  <text x="973" y="456" font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="15" font-weight="600" fill="#F5F0E8" text-anchor="middle">Reveal Hidden</text>
+
+  <!-- ── Item 4: Auto Remove ── -->
+  <circle cx="820" cy="570" r="9" fill="#F59E0B"/>
+  <rect x="838" y="548" width="270" height="46" rx="10" fill="#1C1A17"/>
+  <text x="973" y="576" font-family="'Segoe UI','Inter',Arial,sans-serif"
+        font-size="15" font-weight="600" fill="#F5F0E8" text-anchor="middle">Auto Remove</text>
+
+</svg>
