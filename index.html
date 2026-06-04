@@ -3,163 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StegaMark is a browser-ready watermarking and steganography studio for adding marks, revealing hidden payloads, and automatically cleaning visible watermark traces from images.">
+    <meta name="keywords" content="StegaMark, watermarking, steganography, LSB encoding, image watermark, image forensics, reveal hidden data, auto watermark removal, image inpainting">
+    <meta name="author" content="Turki-Sh">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#100F0D">
+    <meta name="color-scheme" content="dark light">
+    <meta name="application-name" content="StegaMark">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="StegaMark">
+    <link rel="icon" href="favicon.svg?v=3" type="image/svg+xml">
+    <link rel="shortcut icon" href="favicon.svg?v=3" type="image/svg+xml">
+    <link rel="canonical" href="https://turki-sh.github.io/StegaMark/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="StegaMark">
+    <meta property="og:title" content="StegaMark - Digital Watermarking Studio">
+    <meta property="og:description" content="Add visible marks, embed hidden LSB payloads, reveal hidden data, and automatically clean visible watermark traces in one focused image studio.">
+    <meta property="og:url" content="https://turki-sh.github.io/StegaMark/">
+    <meta property="og:image" content="https://turki-sh.github.io/StegaMark/StegaMarkLogo.webp">
+    <meta property="og:image:type" content="image/webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StegaMark - Digital Watermarking Studio">
+    <meta name="twitter:description" content="Browser-ready watermarking, LSB reveal, and automatic watermark cleanup for image ownership workflows.">
+    <meta name="twitter:image" content="https://turki-sh.github.io/StegaMark/StegaMarkLogo.webp">
     <title>StegaMark - Digital Watermarking Studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "StegaMark",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "description": "A digital watermarking and LSB steganography studio for adding visible marks, revealing hidden payloads, and automatically cleaning visible watermark traces.",
+        "url": "https://turki-sh.github.io/StegaMark/",
+        "image": "https://turki-sh.github.io/StegaMark/StegaMarkLogo.webp",
+        "softwareVersion": "3",
+        "creator": {
+            "@type": "Person",
+            "name": "Turki-Sh"
+        },
+        "featureList": [
+            "Visible text watermarking",
+            "Visible logo watermarking",
+            "LSB hidden text embedding",
+            "LSB hidden logo embedding",
+            "Automatic hidden payload reveal",
+            "Automatic visible watermark recovery",
+            "Confidence-weighted image repair"
+        ],
+        "contributor": [
+            {
+                "@type": "Person",
+                "name": "Turki Alshuaibi",
+                "url": "https://www.linkedin.com/in/turki-alshuaibi/"
+            },
+            {
+                "@type": "Person",
+                "name": "Hamza Alzahrani",
+                "url": "https://www.linkedin.com/in/hamza-alzahrani-/"
+            },
+            {
+                "@type": "Person",
+                "name": "Ahmed Alakhdhar",
+                "url": "https://www.linkedin.com/in/ahmad-alakhdhar/"
+            },
+            {
+                "@type": "Person",
+                "name": "Aseel Alsaid",
+                "url": "https://www.linkedin.com/in/aseel-alsaid/"
+            },
+            {
+                "@type": "Person",
+                "name": "Anas Alghamdi",
+                "url": "https://www.linkedin.com/in/anasghamdi/"
+            },
+            {
+                "@type": "Person",
+                "name": "Khalid Alomair",
+                "url": "https://www.linkedin.com/in/engineer-khalid-alomair/"
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="min-h-screen font-sans dark">
     <header class="site-header">
         <div class="site-nav">
             <a href="#top" class="brand-lockup" aria-label="StegaMark home">
-                <img src="StegaMarkLogo.webp" alt="StegaMark Logo" class="brand-logo">
+                <span class="logo-frame brand-logo-frame" aria-hidden="true">
+                    <svg class="logo-symbol" viewBox="0 0 24 24" focusable="false">
+                        <path d="M2.75 12c2.35-4.05 5.43-6.08 9.25-6.08S18.9 7.95 21.25 12c-2.35 4.05-5.43 6.08-9.25 6.08S5.1 16.05 2.75 12Z"></path>
+                        <circle cx="12" cy="12" r="3.1"></circle>
+                    </svg>
+                </span>
                 <span>
                     <strong>StegaMark</strong>
-                    <small>Watermarking AI</small>
+                    <small>Watermarking Studio</small>
                 </span>
             </a>
             <nav class="nav-links" aria-label="Page sections">
-                <a href="#problem">Problem</a>
                 <a href="#studio" data-open-tab="tab-watermark">Studio</a>
-                <a href="#studio" data-open-tab="tab-extract">Extract</a>
-                <a href="#studio" data-open-tab="tab-code">Code</a>
+                <a href="#problem">Problem</a>
+                <a href="#code">Code</a>
+                <a href="#team">Team</a>
             </nav>
             <div class="nav-actions">
-                <a class="connect-btn" href="#studio">Launch</a>
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle color theme" type="button">
-                    <i id="theme-icon-sun" class="fas fa-sun text-xl"></i>
-                    <i id="theme-icon-moon" class="fas fa-moon text-xl hidden"></i>
+                    <svg id="theme-icon-sun" class="theme-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2.75v2M12 19.25v2M4.46 4.46l1.42 1.42M18.12 18.12l1.42 1.42M2.75 12h2M19.25 12h2M4.46 19.54l1.42-1.42M18.12 5.88l1.42-1.42"></path>
+                    </svg>
+                    <svg id="theme-icon-moon" class="theme-icon hidden" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                        <path d="M20.25 14.68A7.7 7.7 0 0 1 9.32 3.75a8.8 8.8 0 1 0 10.93 10.93Z"></path>
+                    </svg>
                 </button>
             </div>
         </div>
     </header>
 
     <main id="top" class="site-main">
-        <section class="hero-section" aria-labelledby="hero-title">
-            <div class="hero-kicker">
-                <img src="StegaMarkLogo.webp" alt="" class="hero-mark" aria-hidden="true">
-                <span>StegaMark Pro</span>
-                <span class="version-pill">v2.1</span>
-            </div>
-            <h1 id="hero-title">StegaMark</h1>
-            <p class="hero-subtitle">Digital Watermarking and Steganography System</p>
-            <a href="#studio" class="hero-cta">Open Studio</a>
-            <div class="tech-marquee" aria-label="Technology stack">
-                <div class="marquee-track">
-                    <span>LSB Encoding</span>
-                    <span>Visible Marks</span>
-                    <span>Pillow</span>
-                    <span>Flask API</span>
-                    <span>Image Forensics</span>
-                    <span>Python</span>
-                    <span>Extraction</span>
-                    <span>LSB Encoding</span>
-                    <span>Visible Marks</span>
-                    <span>Pillow</span>
-                    <span>Flask API</span>
-                    <span>Image Forensics</span>
-                    <span>Python</span>
-                    <span>Extraction</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="problem" class="problem-section" aria-labelledby="problem-title">
-            <div>
-                <p class="section-kicker">01 The problem we're solving</p>
-                <h2 id="problem-title">Images travel fast. Trust does not.</h2>
-            </div>
-            <p class="problem-copy">StegaMark gives image owners a focused workspace for visible brand marks, hidden payloads, and later verification without turning the workflow into a forensic maze.</p>
-            <div class="insight-grid">
-                <article class="insight-card insight-card-large">
-                    <h3>Ownership needs proof</h3>
-                    <p>Reusable controls keep releases consistent.</p>
-                    <strong>3</strong>
-                    <span>watermark modes in the studio</span>
-                </article>
-                <article class="insight-card">
-                    <h3>Hidden data needs precision</h3>
-                    <p>LSB controls balance payload capacity and image quality.</p>
-                </article>
-                <article class="insight-card">
-                    <h3>Verification needs speed</h3>
-                    <p>Extraction checks stay close to the authoring workflow.</p>
-                </article>
-            </div>
-        </section>
-
         <section id="studio" class="studio-shell" aria-label="StegaMark studio">
         <div class="tabs flex justify-center mb-8">
             <div id="tab-watermark" class="tab active">
                 <i class="fas fa-signature mr-2"></i> Add Watermark
             </div>
             <div id="tab-extract" class="tab">
-                 <i class="fas fa-search mr-2"></i> Extract
+                 <i class="fas fa-magnifying-glass mr-2"></i> Reveal
             </div>
-            <div id="tab-code" class="tab">
-                 <i class="fas fa-code mr-2"></i> Code
+            <div id="tab-remove" class="tab">
+                 <i class="fas fa-eraser mr-2"></i> Remove
             </div>
         </div>
 
-        <!-- Add Watermark Section -->
         <div id="section-watermark" class="section">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Control Panel -->
                 <div class="card p-6 col-span-1">
                     <h2 class="text-xl font-bold mb-6 text-primary dark:text-secondary flex items-center"><i class="fas fa-sliders-h mr-2"></i> Settings</h2>
 
-                    <!-- Image Upload -->
-                    <div class="mb-6">
-                        <label for="imageUpload" class="input-label">Source Image</label>
-                        <input type="file" id="imageUpload" accept="image/png, image/jpeg" class="file-input">
-                         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload PNG or JPG image.</p>
-                    </div>
+                    <input type="file" id="imageUpload" accept="image/png, image/jpeg" class="sr-only">
 
-                    <!-- Watermark Type Buttons -->
                     <div class="mb-6">
                         <label class="input-label">Watermark Type</label>
-                        <div class="grid grid-cols-3 gap-2">
+                        <div class="watermark-mode-grid grid grid-cols-3 gap-2">
                             <button data-wm-type="visible-text" class="btn-tab active"><i class="fas fa-font mr-1"></i> Text</button>
                             <button data-wm-type="visible-logo" class="btn-tab"><i class="far fa-image mr-1"></i> Logo</button>
                             <button data-wm-type="invisible" class="btn-tab"><i class="fas fa-eye-slash mr-1"></i> LSB</button>
                         </div>
                     </div>
 
-                     <!-- Visible Watermark Options (Shared for Text/Logo) -->
                     <div id="visible-watermark-options" class="mb-6 space-y-4">
-                        <!-- Text Specific -->
                         <div id="watermark-text-options">
                             <label for="watermarkText" class="input-label">Watermark Text</label>
                             <input type="text" id="watermarkText" placeholder="Your text here" value="&copy; StegaMark" class="input-field">
                         </div>
-                        <!-- Logo Specific -->
                         <div id="watermark-logo-options" class="hidden">
                              <label for="logoUpload" class="input-label">Watermark Logo</label>
-                             <input type="file" id="logoUpload" accept="image/png, image/jpeg, image/gif, image/bmp" class="file-input"> <!-- Allow more types for visible logo -->
+                             <input type="file" id="logoUpload" accept="image/png, image/jpeg, image/gif, image/bmp" class="file-input">
                              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload logo (PNG recommended).</p>
-                             <!-- Logo Scale (Moved inside logo options for clarity) -->
                              <div>
                                 <label for="logoScale" class="input-label flex justify-between mt-2">Logo Scale <span id="logoScaleValue" class="font-mono">15%</span></label>
                                 <input type="range" id="logoScale" min="5" max="50" value="15" class="range-slider">
                              </div>
                          </div>
-                         <!-- Common Visible Options -->
                          <div>
                             <label for="opacity" class="input-label flex justify-between">Opacity <span id="opacityValue" class="font-mono">50%</span></label>
                             <input type="range" id="opacity" min="10" max="100" value="50" class="range-slider">
                          </div>
 
-                         <!-- Text Color (Only for Text Watermark) -->
                          <div id="text-color-option">
                              <label for="textColor" class="input-label">Text Color</label>
-                             <input type="color" id="textColor" value="#ffffff" class="h-10 w-full border border-gray-300 rounded-md cursor-pointer dark:border-gray-600">
+                             <input type="color" id="textColor" value="#EDEAE4" class="h-10 w-full border border-gray-300 rounded-md cursor-pointer dark:border-gray-600">
                          </div>
 
-                         <!-- Tiling & Position Options -->
                          <fieldset class="border border-gray-300 dark:border-gray-600 rounded p-3 pt-1">
                              <legend class="text-sm font-medium px-1 text-gray-600 dark:text-gray-300">Layout</legend>
                              <div class="space-y-3">
-                                 <!-- Tiling Style -->
                                  <div>
                                      <label for="tileStyle" class="input-label">Tiling Style</label>
                                      <select id="tileStyle" class="input-field">
@@ -170,7 +193,6 @@
                                      </select>
                                  </div>
 
-                                 <!-- Position Controls (Shown when tileStyle is 'none') -->
                                  <div id="position-controls">
                                     <label class="input-label">Position</label>
                                     <div class="grid grid-cols-3 gap-1 text-center">
@@ -186,16 +208,14 @@
                                     </div>
                                  </div>
 
-                                 <!-- Tiling Settings (Shown when tileStyle is not 'none') -->
                                  <div id="tile-settings" class="hidden space-y-3">
                                      <div>
                                          <label for="tileSpacing" class="input-label flex justify-between">Tile Spacing <span id="tileSpacingValue" class="font-mono">10%</span></label>
                                          <input type="range" id="tileSpacing" min="0" max="100" value="10" step="5" class="range-slider">
                                          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Relative to watermark size.</p>
                                      </div>
-                                     <!-- Angle (Shown only for 'diagonal' style) -->
                                      <div id="tile-angle-option" class="hidden">
-                                         <label for="tileAngle" class="input-label flex justify-between">Tile Angle <span id="tileAngleValue" class="font-mono">45°</span></label>
+                                         <label for="tileAngle" class="input-label flex justify-between">Tile Angle <span id="tileAngleValue" class="font-mono">45&deg;</span></label>
                                          <input type="range" id="tileAngle" min="-90" max="90" value="45" step="5" class="range-slider">
                                      </div>
                                  </div>
@@ -203,72 +223,57 @@
                          </fieldset>
                     </div>
 
-                    <!-- Invisible Watermark Options -->
                     <div id="invisible-watermark-options" class="mb-6 space-y-4 hidden">
                         <label class="input-label">Data to Hide</label>
-                        <!-- Invisible Data Type Selection -->
                         <div class="grid grid-cols-2 gap-2 mb-2">
                              <button data-inv-type="text" class="btn-tab-secondary active">Text</button>
                              <button data-inv-type="logo" class="btn-tab-secondary">Logo</button>
                         </div>
-                        <!-- Invisible Text Input -->
                         <div id="invisible-text-options">
                             <label for="secretMessage" class="input-label sr-only">Hidden Message</label>
                             <textarea id="secretMessage" rows="3" placeholder="Enter your secret message" class="input-field">StegaMark Hidden Message</textarea>
                         </div>
-                         <!-- Invisible Logo Input -->
                          <div id="invisible-logo-options" class="hidden">
                              <label for="invisibleLogoUpload" class="input-label sr-only">Logo to Hide</label>
                              <input type="file" id="invisibleLogoUpload" accept="image/png" class="file-input">
                              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload PNG logo to hide.</p>
                          </div>
-                         <!-- Encoding Strength -->
                         <div>
-                            <label for="encodingStrength" class="input-label flex justify-between">Encoding Strength (LSB bits: <span id="lsbBitsValue">2</span>)<span id="encodingStrengthValue" class="font-mono">3</span></label>
+                            <label for="encodingStrength" class="input-label flex justify-between">Hide Strength <span id="encodingStrengthValue" class="font-mono">Balanced</span></label>
                             <input type="range" id="encodingStrength" min="1" max="5" value="3" class="range-slider">
-                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Higher uses more LSBs (more robust, potential quality impact).</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Balanced capacity and image quality. Uses <span id="lsbBitsValue">5</span> LSBs.</p>
                         </div>
                     </div>
 
-                    <!-- Apply Button -->
                     <button id="apply-watermark" class="btn-primary w-full py-3 px-6 rounded-md font-medium flex items-center justify-center transition duration-300 ease-in-out" disabled>
                         <span class="btn-text"><i class="fas fa-magic mr-2"></i> Apply Watermark</span>
                         <i class="fas fa-spinner fa-spin btn-loading hidden ml-2"></i>
                     </button>
-                     <!-- Apply Status Message -->
                      <p id="apply-status" class="text-xs text-center mt-2 h-4"></p>
                 </div>
 
-                <!-- Preview Panel -->
                 <div class="card p-6 col-span-1 lg:col-span-2">
                     <h2 class="text-xl font-bold mb-4 text-primary dark:text-secondary flex items-center"><i class="fas fa-eye mr-2"></i> Preview & Download</h2>
 
-                    <!-- Preview Area -->
                     <div id="preview-container" class="watermark-container mb-4 rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 dark:bg-gray-800/30 dark:border-gray-600 flex items-center justify-center relative overflow-hidden" style="min-height: 400px;">
-                        <!-- Placeholder Message -->
                         <div id="no-image-message" class="text-center p-6 text-gray-500 dark:text-gray-400">
                             <i class="fas fa-image text-6xl mb-4"></i>
-                            <p>Upload an image to start</p>
+                            <p>Upload or drop an image to start</p>
                         </div>
-                        <!-- Image Wrapper and Image -->
                         <div id="watermark-preview-wrapper" class="absolute inset-0 flex items-center justify-center hidden w-full h-full">
                             <img id="preview-image" class="max-w-full max-h-full object-contain block" alt="Image Preview"/>
-                            <!-- Watermarks will be overlaid programmatically by JS -->
                         </div>
-                         <!-- Processing Overlay -->
                          <div id="processing-overlay" class="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-xl hidden">
                             <i class="fas fa-spinner fa-spin mr-3"></i> Processing...
                         </div>
                     </div>
 
-                    <!-- Progress Bar -->
                     <div class="progress-bar-container mb-4 hidden" id="progress-container">
                         <div id="progress-bar-fill" class="progress-bar-fill"></div>
                     </div>
 
-                    <!-- Download/Reset Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <button id="download-btn" class="btn-secondary py-3 px-6 rounded-md font-medium flex-grow disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center" disabled>
+                        <button id="download-btn" class="btn-secondary py-3 px-6 rounded-md font-medium flex-grow disabled:opacity-50 flex items-center justify-center" title="Upload an image first" disabled>
                             <i class="fas fa-download mr-2"></i> Download
                         </button>
                         <button id="reset-btn" class="btn-accent py-3 px-6 rounded-md font-medium opacity-90 hover:opacity-100 flex items-center justify-center">
@@ -279,57 +284,110 @@
             </div>
         </div>
 
-        <!-- Extract Watermark Section -->
         <div id="section-extract" class="section hidden">
-            <div class="card p-6 max-w-3xl mx-auto">
-                <h2 class="text-xl font-bold mb-6 text-primary dark:text-secondary flex items-center"><i class="fas fa-search mr-2"></i> Extract Invisible Watermark</h2>
-
-                <!-- Image Upload for Extraction -->
-                <div class="mb-6">
-                    <label for="extractImageUpload" class="input-label">Watermarked Image</label>
-                    <input type="file" id="extractImageUpload" accept="image/png" class="file-input">
-                     <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload PNG image suspected to contain hidden data.</p>
-                </div>
-
-                <!-- Extraction Strength -->
-                <div class="mb-6">
-                    <label for="extractionStrength" class="input-label flex justify-between">Extraction Strength (LSB bits: <span id="extractLsbBitsValue">2</span>)<span id="extractionStrengthValue" class="font-mono">3</span></label>
-                     <input type="range" id="extractionStrength" min="1" max="5" value="3" class="range-slider">
-                     <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Must match the strength used during encoding.</p>
-                </div>
-
-                <!-- Extract Button -->
-                <button id="extract-watermark-btn" class="btn-primary w-full py-3 px-6 rounded-md font-medium mb-6 flex items-center justify-center" disabled>
-                    <span class="btn-text"><i class="fas fa-search-plus mr-2"></i> Extract Watermark</span>
-                    <i class="fas fa-spinner fa-spin btn-loading hidden ml-2"></i>
-                </button>
-                 <!-- Extract Status Message -->
-                 <p id="extract-status" class="text-xs text-center mt-2 h-4"></p>
-
-                <!-- Extract Progress Bar -->
-                <div class="progress-bar-container mb-4 hidden" id="extract-progress-container">
-                    <div id="extract-progress-bar-fill" class="progress-bar-fill"></div>
-                </div>
-
-                <!-- Extraction Result Area -->
+            <div class="card p-6 max-w-4xl mx-auto">
+                <h2 class="text-xl font-bold mb-5 text-primary dark:text-secondary flex items-center"><i class="fas fa-magnifying-glass mr-2"></i> Reveal Hidden Data</h2>
+                <label id="reveal-dropzone" for="extractImageUpload" class="dropzone-panel mb-5">
+                    <input type="file" id="extractImageUpload" accept="image/png" class="sr-only">
+                    <i class="fas fa-file-image text-5xl mb-4"></i>
+                    <span>Drop a PNG here</span>
+                    <small>StegaMark checks every LSB depth automatically.</small>
+                </label>
+                <p id="extract-status" class="text-xs text-center mt-2 h-4"></p>
                 <div id="extraction-result" class="hidden border rounded-md p-4 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 mt-6">
-                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Extraction Result</h3>
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Reveal Result</h3>
                     <div id="extracted-content" class="p-3 bg-white dark:bg-gray-800 border rounded min-h-[100px] flex flex-col items-center justify-center">
-                        <p id="extracted-placeholder" class="text-gray-500 dark:text-gray-400">No data extracted yet.</p>
+                        <p id="extracted-placeholder" class="text-gray-500 dark:text-gray-400">No data revealed yet.</p>
                         <p id="extracted-message" class="text-gray-800 dark:text-gray-200 hidden whitespace-pre-wrap break-words w-full"></p>
-                        <img id="extracted-image" class="max-w-full max-h-64 hidden" alt="Extracted Logo"/>
+                        <img id="extracted-image" class="max-w-full max-h-64 hidden" alt="Revealed logo"/>
                         <p id="extracted-error" class="text-red-600 dark:text-red-400 hidden"></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Python Code Section -->
-        <div id="section-code" class="section hidden">
+        <div id="section-remove" class="section hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="card p-6 col-span-1">
+                    <h2 class="text-xl font-bold mb-6 text-primary dark:text-secondary flex items-center"><i class="fas fa-eraser mr-2"></i> Remove Watermark</h2>
+                    <input type="file" id="removeImageUpload" accept="image/png, image/jpeg" class="sr-only">
+                    <div class="cleanup-method mb-6">
+                        <span class="cleanup-method-icon"><i class="fas fa-wand-magic-sparkles"></i></span>
+                        <div>
+                            <strong>Automatic watermark recovery</strong>
+                            <p>Drop an image and StegaMark runs the cleanup model automatically, then shows a before and after comparison.</p>
+                        </div>
+                    </div>
+                    <button id="remove-watermark-btn" class="btn-primary w-full py-3 px-6 rounded-md font-medium flex items-center justify-center" disabled>
+                        <span class="btn-text"><i class="fas fa-wand-magic-sparkles mr-2"></i> Run Cleanup</span>
+                        <i class="fas fa-spinner fa-spin btn-loading hidden ml-2"></i>
+                    </button>
+                    <p id="remove-status" class="text-xs text-center mt-2 h-4"></p>
+                </div>
+                <div class="card p-6 col-span-1 lg:col-span-2">
+                    <h2 class="text-xl font-bold mb-4 text-primary dark:text-secondary flex items-center"><i class="fas fa-eye mr-2"></i> Clean Preview</h2>
+                    <div id="remove-preview-container" class="watermark-container mb-4 rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 dark:bg-gray-800/30 dark:border-gray-600 flex items-center justify-center relative overflow-hidden" style="min-height: 400px;">
+                        <div id="no-remove-image-message" class="text-center p-6 text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-image text-6xl mb-4"></i>
+                            <p>Upload or drop an image to clean</p>
+                        </div>
+                        <img id="remove-preview-image" class="max-w-full max-h-full object-contain block hidden" alt="Cleaned image preview"/>
+                        <div id="remove-comparison" class="comparison-view hidden" aria-label="Before and after comparison">
+                            <img id="remove-before-image" class="comparison-image" alt="Before watermark removal">
+                            <div id="remove-after-wrap" class="comparison-after">
+                                <img id="remove-after-image" class="comparison-image" alt="After watermark removal">
+                            </div>
+                            <span class="comparison-label comparison-label-before">Before</span>
+                            <span class="comparison-label comparison-label-after">After</span>
+                            <button id="remove-compare-handle" class="comparison-handle" type="button" aria-label="Drag to compare before and after">
+                                <i class="fas fa-chevron-left"></i>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button id="remove-download-btn" class="btn-secondary py-3 px-6 rounded-md font-medium flex-grow disabled:opacity-50 flex items-center justify-center" disabled>
+                            <i class="fas fa-download mr-2"></i> Download
+                        </button>
+                        <button id="remove-reset-btn" class="btn-accent py-3 px-6 rounded-md font-medium opacity-90 hover:opacity-100 flex items-center justify-center">
+                            <i class="fas fa-upload mr-2"></i> Upload Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </section>
+
+        <section id="problem" class="problem-section" aria-labelledby="problem-title">
+            <div>
+                <p class="section-kicker">The problem we're solving</p>
+                <h2 id="problem-title">Images travel fast. Trust does not.</h2>
+            </div>
+            <p class="problem-copy">StegaMark gives image owners a focused workspace for visible brand marks, hidden payloads, fast reveal checks, and cleanup without turning the workflow into a forensic maze.</p>
+            <div class="insight-grid">
+                <article class="insight-card insight-card-large">
+                    <h3>Ownership needs proof</h3>
+                    <p>Reusable controls keep releases consistent.</p>
+                    <strong>4</strong>
+                    <span>studio workflows</span>
+                </article>
+                <article class="insight-card">
+                    <h3>Hidden data needs precision</h3>
+                    <p>LSB controls balance payload capacity and image quality.</p>
+                </article>
+                <article class="insight-card">
+                    <h3>Verification needs speed</h3>
+                    <p>Reveal checks try every supported LSB depth automatically.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="code" class="code-section" aria-labelledby="code-title">
             <div class="card p-6">
-                <h2 class="text-xl font-bold mb-4 text-primary dark:text-secondary flex items-center"><i class="fab fa-python mr-2"></i> Python Backend Overview</h2>
+                <h2 id="code-title" class="text-xl font-bold mb-4 text-primary dark:text-secondary flex items-center"><i class="fab fa-python mr-2"></i> Processing Overview</h2>
                 <p class="mb-6 text-gray-700 dark:text-gray-300">
-                    The core logic of StegaMark Pro is powered by a Python backend using the Flask web framework and the Pillow image processing library. This script (`app.py`) handles image manipulation, steganography, and serves the web interface you are using.
+                    StegaMark runs the hosted studio in the browser. The original Python and Flask workflow remains useful for local CLI/server use, while GitHub Pages serves the static interface.
                 </p>
 
                 <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Key Functionalities:</h3>
@@ -344,10 +402,9 @@
                             - <code class="code-inline">decode_image</code>: Reads the LSBs from the image pixels in the same order, reconstructs the binary stream, and stops when it finds the delimiter, returning the data found before it.<br>
                             - <code class="code-inline">Strength</code>: Controls how many LSBs (1 to 8) per channel are used. Higher strength embeds more data faster and is more robust to *some* compression, but makes larger changes to the pixel values, increasing the risk of visual artifacts. Requires lossless PNG format for saving, as JPEG compression destroys LSB data.
                         </p>
-                        <!-- Simple Text Visual -->
                         <div class="text-xs text-gray-500 dark:text-gray-400 ml-8 mt-1 mb-2 p-2 border border-dashed border-gray-300 dark:border-gray-600 rounded inline-block">
                             <strong class="block mb-1">LSB Example (1 bit):</strong>
-                            Original Pixel Value (Red): 177 = <code class="code-inline">1011000<span class="font-bold text-blue-500">1</span></code><br>
+                            Original Pixel Value (Red): 177 = <code class="code-inline">1011000<span class="lsb-bit-highlight">1</span></code><br>
                             Secret Bit to Hide: <code class="code-inline">0</code><br>
                             New Pixel Value (Red): 176 = <code class="code-inline">1011000<span class="font-bold text-red-500">0</span></code> (LSB replaced)
                         </div>
@@ -356,25 +413,24 @@
                     <div>
                         <h4 class="font-semibold text-primary dark:text-secondary">2. Visible Watermarking</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400 ml-4">
-                            - Handled by the <code class="code-inline">add_visible_watermark</code> function.<br>
+                            - Handled in the hosted studio with the browser Canvas API, with the original <code class="code-inline">add_visible_watermark</code> function available in the Python workflow.<br>
                             - Supports both text and logo watermarks.<br>
-                            - Creates a transparent overlay layer (<code class="code-inline">watermark_layer</code>) the size of the base image.<br>
-                            - Renders the text (using Pillow's <code class="code-inline">ImageDraw</code> and <code class="code-inline">ImageFont</code>) or resizes the logo onto a temporary, transparent element image.<br>
+                            - Creates a canvas the size of the base image and draws the visible mark directly onto it.<br>
+                            - Renders text with browser fonts or resizes the uploaded logo before compositing it into the image.<br>
                             - Applies opacity to the watermark element.<br>
                             - Calculates position (<code class="code-inline">_calculate_position</code>) for single placement or uses tiling logic for repeated patterns ('grid', 'staggered', 'diagonal').<br>
                             - For tiling, it calculates step sizes based on watermark dimensions and spacing, potentially rotates the element ('diagonal' style), and pastes it repeatedly onto the overlay.<br>
-                            - Finally, composites the overlay onto the base image using <code class="code-inline">Image.alpha_composite</code>.
+                            - Finally, exports the processed image as a downloadable browser-generated file.
                         </p>
                     </div>
 
                     <div>
-                        <h4 class="font-semibold text-primary dark:text-secondary">3. Web Interface (Flask)</h4>
+                        <h4 class="font-semibold text-primary dark:text-secondary">3. Hosted Web Interface</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400 ml-4">
-                            - Uses Flask (<code class="code-inline">app = Flask(__name__)</code>) to create a web server.<br>
-                            - <code class="code-inline">@app.route('/')</code>: Serves the main `index.html` page.<br>
-                            - <code class="code-inline">@app.route('/watermark', methods=['POST'])</code>: Handles watermark application requests. It parses form data (image, settings, text/logo), calls the appropriate watermarking function (<code class="code-inline">add_visible_watermark</code> or <code class="code-inline">LSBSteganography.encode_image</code>), and returns the resulting image file.<br>
-                            - <code class="code-inline">@app.route('/extract', methods=['POST'])</code>: Handles extraction requests. It receives the image and strength, calls <code class="code-inline">LSBSteganography.decode_image</code>, attempts to interpret the result (JSON metadata for text/image or raw bytes), and returns the findings as JSON.<br>
-                            - Includes error handling for file issues, data size limits, and processing errors.
+                            - GitHub Pages serves <code class="code-inline">index.html</code>, <code class="code-inline">style.css</code>, <code class="code-inline">main.js</code>, and local image assets as static files.<br>
+                            - Visible watermarking, LSB embedding, reveal checks, and cleanup all run in the user's browser, so no hosted Flask route is required for the public page.<br>
+                            - A Flask app can still be used locally or on a separate backend host for CLI/API workflows, but it is not part of the GitHub Pages deployment.<br>
+                            - Includes browser-side error handling for file issues, data size limits, and processing errors.
                         </p>
                     </div>
                      <div>
@@ -389,22 +445,21 @@
 
                 <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Core Libraries:</h3>
                  <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mb-6 ml-4">
-                    <li><strong class="font-medium">Pillow:</strong> For all image loading, manipulation, drawing, and saving operations.</li>
-                    <li><strong class="font-medium">Flask:</strong> For creating the web server and handling HTTP requests/responses.</li>
+                    <li><strong class="font-medium">Browser Canvas API:</strong> For the hosted studio's image loading, drawing, compositing, and export operations.</li>
+                    <li><strong class="font-medium">Pillow:</strong> For the optional Python CLI/local server workflow.</li>
+                    <li><strong class="font-medium">Flask:</strong> For optional local or separately hosted HTTP API workflows.</li>
                     <li><strong class="font-medium">Standard Libraries:</strong> <code class="code-inline">os</code>, <code class="code-inline">sys</code>, <code class="code-inline">math</code>, <code class="code-inline">base64</code>, <code class="code-inline">io</code>, <code class="code-inline">json</code>, <code class="code-inline">argparse</code>.</li>
                  </ul>
 
-                <!-- Code Block -->
                 <div class="mb-6">
                      <h4 class="text-md font-semibold mb-2 text-gray-700 dark:text-gray-300">Conceptual Example: How LSB Works</h4>
                      <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
                         Imagine a single pixel's Red color value is 177. In binary (8 bits), this is <code class="code-inline">10110001</code>. The Least Significant Bit (LSB) is the rightmost bit (<code class="code-inline">1</code>).
                         If we want to hide the secret bit <code class="code-inline">0</code>, we simply replace the LSB:
                      </p>
-                     <!-- Enhanced Text Visual -->
                      <div class="text-xs text-gray-500 dark:text-gray-400 ml-4 mb-3 p-3 border border-dashed border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700/50 inline-block">
                          <strong class="block mb-1 text-gray-700 dark:text-gray-300">Example (1 LSB):</strong>
-                         Original Red Value: 177 = <code class="code-inline">1011000<span class="font-bold text-blue-500">1</span></code><br>
+                         Original Red Value: 177 = <code class="code-inline">1011000<span class="lsb-bit-highlight">1</span></code><br>
                          Secret Bit to Hide: <code class="code-inline">0</code><br>
                          New Red Value: 176 = <code class="code-inline">1011000<span class="font-bold text-red-500">0</span></code><br>
                          <span class="text-gray-400 dark:text-gray-500 italic mt-1 block">Notice the tiny change (177 -> 176), visually negligible.</span>
@@ -414,7 +469,7 @@
                      </p>
                       <div class="text-xs text-gray-500 dark:text-gray-400 ml-4 mb-4 p-3 border border-dashed border-gray-300 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700/50 inline-block">
                          <strong class="block mb-1 text-gray-700 dark:text-gray-300">Example (3 LSBs):</strong>
-                         Original Red Value: 177 = <code class="code-inline">10110<span class="font-bold text-blue-500">001</span></code><br>
+                         Original Red Value: 177 = <code class="code-inline">10110<span class="lsb-bit-highlight">001</span></code><br>
                          Secret Bits to Hide: <code class="code-inline">101</code><br>
                          New Red Value: 181 = <code class="code-inline">10110<span class="font-bold text-red-500">101</span></code><br>
                          <span class="text-gray-400 dark:text-gray-500 italic mt-1 block">Change is larger (177 -> 181), potentially more noticeable.</span>
@@ -505,30 +560,83 @@ print(f"Pixel Original: {pixel_value_3lsb} ({pixel_value_3lsb:08b}), Secret Bits
 </code></pre>
                     </div>
                 </div>
-                 <!-- Example Usage Info -->
                  <p class="text-sm text-gray-600 dark:text-gray-400">
                      <strong>Example CLI Usage:</strong><br>
                      <code class="code-inline">python app.py encode-invisible --input input.png --message "Secret" --output encoded.png --strength 3</code><br>
                      <code class="code-inline">python app.py decode --input encoded.png --strength 3</code><br>
                      <code class="code-inline">python app.py encode-visible --input input.jpg --text "&copy; Me" --output visible.jpg --position bottom-right</code><br>
                      <code class="code-inline">python app.py web</code>
-                 </p>
+         </p>
             </div>
-        </div>
+        </section>
 
+        <section id="team" class="team-section" aria-labelledby="team-title">
+            <div>
+                <p class="section-kicker">Team</p>
+                <h2 id="team-title">Built by the StegaMark team.</h2>
+            </div>
+            <div class="team-grid" aria-label="StegaMark team LinkedIn profiles">
+                <a class="team-card" href="https://www.linkedin.com/in/turki-alshuaibi/" target="_blank" rel="noopener noreferrer" aria-label="Turki Alshuaibi on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-turki" src="team/turki.jpeg" alt="Turki Alshuaibi" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Turki Alshuaibi</strong>
+                    </span>
+                </a>
+                <a class="team-card" href="https://www.linkedin.com/in/hamza-alzahrani-/" target="_blank" rel="noopener noreferrer" aria-label="Hamza Alzahrani on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-hamza" src="team/hamza.png" alt="Hamza Alzahrani" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Hamza Alzahrani</strong>
+                    </span>
+                </a>
+                <a class="team-card" href="https://www.linkedin.com/in/ahmad-alakhdhar/" target="_blank" rel="noopener noreferrer" aria-label="Ahmed Alakhdhar on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-ahmad" src="team/ahmad.png" alt="Ahmed Alakhdhar" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Ahmed Alakhdhar</strong>
+                    </span>
+                </a>
+                <a class="team-card" href="https://www.linkedin.com/in/aseel-alsaid/" target="_blank" rel="noopener noreferrer" aria-label="Aseel Alsaid on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-aseel" src="team/aseel.png" alt="Aseel Alsaid" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Aseel Alsaid</strong>
+                    </span>
+                </a>
+                <a class="team-card" href="https://www.linkedin.com/in/anasghamdi/" target="_blank" rel="noopener noreferrer" aria-label="Anas Alghamdi on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-anas" src="team/anas.png" alt="Anas Alghamdi" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Anas Alghamdi</strong>
+                    </span>
+                </a>
+                <a class="team-card" href="https://www.linkedin.com/in/engineer-khalid-alomair/" target="_blank" rel="noopener noreferrer" aria-label="Khalid Alomair on LinkedIn">
+                    <span class="team-photo-frame">
+                        <img class="team-photo-khalid" src="team/khalid.jpeg" alt="Khalid Alomair" loading="lazy">
+                    </span>
+                    <span class="team-card-body">
+                        <strong>Khalid Alomair</strong>
+                    </span>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <p>StegaMark Pro v2.1 - Advanced Watermarking & Steganography</p>
+            <p class="footer-version">v3</p>
+            <p>Advanced Watermarking & Steganography</p>
             <p>&copy; 2026. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Include ClipboardJS for copy button -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
-    <!-- Include Main JavaScript -->
-    <script src="main.js"></script>
+    <script src="main.js?v=3"></script>
 </body>
 </html>
