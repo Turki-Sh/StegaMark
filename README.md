@@ -13,8 +13,7 @@ StegaMark is a modern web application that demonstrates advanced image processin
 ## 🚀 Try It Live
 
 * **Frontend:** [StegaMark on GitHub Pages](https://turki-sh.github.io/StegaMark/)
-* **Backend:** Hosted on PythonAnywhere ([API root](https://0QuQ.pythonanywhere.com))
-
+* 
 ***
 
 ## ✨ Features
